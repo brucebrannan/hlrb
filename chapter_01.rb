@@ -60,7 +60,7 @@ puts
 
 # Fixnum no prefix or 0d
 puts -123456789
-puts 0d123456789
+puts 0d123459
 
 # Bignum
 puts 1234323424231
@@ -164,6 +164,7 @@ oh_so_empty = Array.new
 hello = ['ni hao', 'bonjour', 'hi', 'howdy']
 random_types = [13, 'napkin', (1336 + 1).to_s]
 
+# to write an array of strings separated by spaces instead of commas and without quotes around them
 my_haiku = %w( my dog digs it here\n )
 puts my_haiku
 
@@ -180,3 +181,132 @@ puts my_haiku
 my_range = 1..10
 
 puts my_dazzling_array = my_range.to_a
+puts
+
+# add an element at index 10
+my_dazzling_array[10] = 11
+puts my_dazzling_array
+puts
+
+# add an element at index 12, index 11 is nil
+my_dazzling_array[12] = 12
+puts my_dazzling_array
+puts
+
+# insert an element at index 11
+my_dazzling_array[11] = 'hello'
+puts my_dazzling_array
+puts
+
+# other methods to insert elements into an array
+my_dazzling_array.push(15, 16)
+puts my_dazzling_array
+puts
+
+# insert allows a specified index
+# the -1 goes to the end of the array and moves back 1
+my_dazzling_array.insert(-1, 17)
+puts my_dazzling_array
+puts
+
+# the << operator allows push of several elements to an array
+my_dazzling_array << 14 << 'hello' << 18
+puts my_dazzling_array
+puts
+
+# how to use the array, call each index
+puts my_dazzling_array[0]
+puts
+
+index = 6 # must be an integer or will return a TypeError
+puts my_dazzling_array[index]
+puts
+
+# reference a range of elements
+puts my_dazzling_array[0..8]
+puts
+
+puts my_dazzling_array.at(0)
+puts
+
+# fetch allows specification of an output if an element isn't found at an index
+puts my_dazzling_array.fetch(999, "Not found!!")
+puts
+
+# values_at retrieves an array of indexes
+puts my_dazzling_array.values_at(7, 8, 2)
+puts
+
+# pop grabs the last element in the array and removes it from the array
+# shift grabs the first element from the array and removes it shifting all other elements back one index
+
+puts "Before Pop"
+puts my_dazzling_array
+my_dazzling_array.pop
+puts "After Pop"
+puts my_dazzling_array
+puts
+my_dazzling_array.shift
+puts "After Shift"
+puts my_dazzling_array
+puts
+
+# delete_at method deletes elements at an index (x)
+puts my_dazzling_array.delete_at(1)
+puts my_dazzling_array
+puts
+
+# specify an element instead of an index with .delete(x)
+puts my_dazzling_array.delete('hello')
+puts my_dazzling_array
+
+# {} overrides the default error message when specifying an element that isn't found'
+puts my_dazzling_array.delete(1337) { "Wrong!" }
+puts
+
+# The Hash - aka Associative Array or Dictionary
+# hashes are collections of values of any type indexed by other values of (almost)
+# any type rather than solely numbers like arrays (though you can use numbers for hashes also)
+
+# bracket nothing or a set of key value pairs with => between the braces, with a comma between entries
+my_wombats = { 'Wally Wombat' => 'The Jungle St.',
+               'Wilma Wombat' => 'The House on the Corner',
+               'Sam' => 'Notawombat Way', 'Mump' => 13 }
+
+# you can use the new method for creating hashes
+# it takes a single parameter which becomes a default value if
+# a nonexistent key is referenced (or if the default method is called)
+new_hash = Hash.new("Not here!")
+new_hash['non-existent key']
+
+# Keys can be added to a hash by simply defining them
+my_wombats['Wombie McWombat'] = '123 That Street'
+# Note you don't redefine the hash or enclose anything in brackets or braces
+
+# to use the hash simply reference it with hash_name[key]
+puts my_wombats['Wally Wombat']
+
+# Hashes also offer the values_at method, which allows you to provide numerous
+# keys and receive their values in an array. Values in hashes have to be called
+# using these methods (fetch, [key], or values_at)
+
+# to test hash elements
+
+# has_key? tests whether the hash key passed as a parameter exists
+puts my_wombats.has_key?('Wilma Wombat') # true
+
+# checks to see if the value exists within the hash
+puts my_wombats.has_value?('Lamps and pandas') # false
+
+# the empty method checks if any elements exist in the hash
+puts my_wombats.empty? # false
+
+# to delete has members use hash_name.delete[key]
+puts my_wombats.delete['Wilma Wombat']
+puts my_wombats.has_key? ('Wilma Wombat') # false
+
+# methods to clear all elements in a hash
+my_wombats.clear
+puts my_wombats.empty? #true
+
+# Variables and the Like (bottom of pg. 20)
