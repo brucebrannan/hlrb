@@ -146,7 +146,7 @@ puts(good_cookies === his_guess)
 puts
 
 # include? includes any number value within the range like 2.456 in 1..3 = true
-# indlude? has an alias called member?
+# include? has an alias called member?
 
 puts 11111
 puts (good_cookies.member?(my_guess))
