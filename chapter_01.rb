@@ -369,5 +369,28 @@ puts
 # additive assignment operator (+=) and the subtractive assignment operator (-=)
 # they replace ++ and -- in other languages
 
-lumps += 2 # equivalent to lumps = lumps +2
-puts lumps
+# lumps += 2 # equivalent to lumps = lumps +2
+# puts lumps
+# 2 or should return 2
+#
+# pie += lumps # pie = pie + lumps
+# 2
+#
+# lumps -= pie # lumps = lumps – pie
+# 0
+
+# freeze an object for troubleshooting, at the last line of code that behaves normally
+# Lots of code here...
+# my_crazy_object = why_do_you_hate_me?
+# my_crazy_object.freeze
+# Even more code...
+# my_crazy_object = abnormal_value # TypeError! can't modify frozen object
+
+# Regular Expression
+# whatever is between the slashes will be matched and assigned to the lvalue when the =~ operator is used
+my_string =~ /\sstring\s/
+
+my_string = "my string is looooong"
+puts my_string =~ /\sstring\s/
+puts my_string =~ /\s/
+puts my_string =~ /my/
