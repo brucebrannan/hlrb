@@ -293,20 +293,81 @@ puts my_wombats['Wally Wombat']
 # to test hash elements
 
 # has_key? tests whether the hash key passed as a parameter exists
-puts my_wombats.has_key?('Wilma Wombat') # true
-
+# puts my_wombats.has_key?('Wilma Wombat') # true
+#
 # checks to see if the value exists within the hash
-puts my_wombats.has_value?('Lamps and pandas') # false
-
+#puts my_wombats.has_value?('Lamps and pandas') # false
+#
 # the empty method checks if any elements exist in the hash
-puts my_wombats.empty? # false
-
+#puts my_wombats.empty? # false
+#
 # to delete has members use hash_name.delete[key]
-puts my_wombats.delete['Wilma Wombat']
-puts my_wombats.has_key? ('Wilma Wombat') # false
-
+# puts my_wombats.delete['Wilma Wombat']
+# puts my_wombats.has_key? ('Wilma Wombat') # false
+#
 # methods to clear all elements in a hash
-my_wombats.clear
-puts my_wombats.empty? #true
+# my_wombats.clear
+# puts my_wombats.empty? #true
 
 # Variables and the Like (bottom of pg. 20)
+# In Ruby, variables point to a location in memory
+first_var = "i hold a reference"
+second_var = first_var
+second_var.chop! # Chops off the last character of the string
+puts second_var
+puts first_var
+
+# variables are not objects but references (or pointers) to objects
+# VARIABLES ARE NOT OBJECTS BUT REFERENCES (OR POINTERS) TO OBJECTS!
+# References merely point to objects; they do not hold the actual objects themselves
+# use .clone or .dup method on an object to copy it
+
+# normal variable assignment: lvalue = rvalue
+left = 5
+puts left
+
+# chain assignments
+left = middle = 7
+puts left
+puts middle
+puts
+
+# not parallel assignment, from right to left
+t = h = i = s = i = s = c = r = a = z = y = 100
+puts t, h, i, s, i, s, c, r, a, z, y
+puts
+
+# parallel assignment
+p1,p2=1,2 # [1, 2] creates an array of assigned values
+puts p1
+puts p2
+
+rvalue=0
+a,b=rvalue
+puts "a = #{a}"
+puts "b = #{b}"
+puts
+
+# an array can be assigned to a list of variables
+rvalue=[1,2,3,4,5]
+a,b=rvalue
+puts "rvalue = #{rvalue}"
+puts "a = #{a}"
+puts "b = #{b}"
+puts
+
+# Arrays can also be assigned in parallel in nested assignments
+a, (b, c), d = 10, 11, 12, 13
+puts "a=#{a}, b=#{b}, c=#{c}, d=#{d}"
+# c does not get assigned because it is in an array with b and the corresponding rvalue is not an array
+puts
+
+a, (b, c), d = 10, [11, 12], 13
+puts "a=#{a}, b=#{b}, c=#{c}, d=#{d}"
+puts
+
+# additive assignment operator (+=) and the subtractive assignment operator (-=)
+# they replace ++ and -- in other languages
+
+lumps += 2 # equivalent to lumps = lumps +2
+puts lumps
