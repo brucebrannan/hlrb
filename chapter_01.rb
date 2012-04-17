@@ -368,16 +368,18 @@ puts
 
 # additive assignment operator (+=) and the subtractive assignment operator (-=)
 # they replace ++ and -- in other languages
-
-# lumps += 2 # equivalent to lumps = lumps +2
-# puts lumps
+lumps = 0
+puts = 0
+pie = 0
+lumps += 2 # equivalent to lumps = lumps +2
+puts lumps
 # 2 or should return 2
-#
-# pie += lumps # pie = pie + lumps
-# 2
-#
-# lumps -= pie # lumps = lumps – pie
-# 0
+
+pie += lumps # pie = pie + lumps
+
+
+lumps -= pie # lumps = lumps – pie
+puts lumps
 
 # freeze an object for troubleshooting, at the last line of code that behaves normally
 # Lots of code here...
