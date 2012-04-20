@@ -91,10 +91,12 @@ myproc.call("pandas")
 lp()
 
 def make_show_name(show)
-  Proc.new {|host| show + " with " + host}
+  Proc.new {|host| puts show + " with " + host}
 end
 show1 = make_show_name("Practical Cannibalism")
 show2 = make_show_name("Cotillions in the Amazon")
 show1.call("H. Annabellector")
 show2.call("Jack Hannah")
 show1.call("Kirstie Alley")
+lp()
+
