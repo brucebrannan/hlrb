@@ -100,3 +100,24 @@ show2.call("Jack Hannah")
 show1.call("Kirstie Alley")
 lp()
 
+# the lambda method is equivalent to calling Proc.new
+myproc = lambda {|x| puts "Argument: #{x}"}
+myproc.call("Texas forever!")
+lp()
+
+# roc objects created with lambda have stricter argument
+# checking than those created with Proc.new
+lproc = lambda {|a,b| puts "#{a + b} <- the sum"}
+nproc = Proc.new {|a,b| puts "#{a + b} <- the sum"}
+nproc.call(1, 2, 3)
+# this call gives a wrong number of arguments error (3 for 2)
+# lproc.call(1, 2, 3)
+lp()
+
+# Implicit block usage
+def yieldme
+  print "1. Enter method. "
+  yield
+  print "3. Exit method."
+end
+yieldme { print "2. Enter block. "}
