@@ -145,5 +145,38 @@ lp()
 puts "File.class = " + "#{File.class}"
 puts "File.superclass = " + "#{File.superclass}"
 puts "Object.superclass = " + "#{Object.superclass}"
+lp()
 
+class Boogeyman
+  def initialize
+    puts "Yes, master?"
+  end
+end
+monster1 = Boogeyman.new
+lp()
 
+class Boogeyman
+  def initialize(name, location)
+    @name = name
+    @location = location
+  end
+end
+monster1 = Boogeyman.new("Mister Creepy", "New York, NY")
+
+class Boogeyman
+  def change_location(newlocation)
+    @location = newlocation
+    puts "I moved to #{newlocation}!"
+    self.get_info
+  end
+  def change_name(newname)
+    @name = newname
+    puts "I shall be called #{newname} from now on!"
+    self.get_info
+  end
+  def get_info
+    puts "I am #{name} in #{@location}."
+  end
+end
+monster1 = Boogeyman.new("Loopy Lou", "Albuquerque, NM")
+monster1.change_location("Wyoming")
