@@ -2,6 +2,7 @@
 
 # method for example separator
 def lp()
+  puts
   puts "-------------------------------------------------------------"
   end
 lp()
@@ -121,3 +122,28 @@ def yieldme
   print "3. Exit method."
 end
 yieldme { print "2. Enter block. "}
+lp()
+
+def myeach(myarray)
+  iter = 0
+  while (iter < myarray.length)
+    yield(myarray[iter])
+    iter+= 1
+  end
+end
+testarray = [2,4,6,8,10]
+myeach(testarray) {|item| print "#{item}:"}
+lp()
+
+def ampersand(&block)
+  block.call
+  yield
+end
+ampersand { print "I'm gettin' called! " }
+lp()
+
+puts "File.class = " + "#{File.class}"
+puts "File.superclass = " + "#{File.superclass}"
+puts "Object.superclass = " + "#{Object.superclass}"
+
+
