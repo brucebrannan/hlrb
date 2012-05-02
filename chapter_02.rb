@@ -175,8 +175,53 @@ class Boogeyman
     self.get_info
   end
   def get_info
-    puts "I am #{name} in #{@location}."
+    puts "I am #{@name} in #{@location}."
   end
 end
 monster1 = Boogeyman.new("Loopy Lou", "Albuquerque, NM")
 monster1.change_location("Wyoming")
+lp()
+monster1.change_name("Beezlebub")
+lp()
+
+class String
+  def writesize
+    puts self.size
+  end
+end
+size_writer = "Tell me my size!"
+size_writer.writesize
+lp()
+
+# to write to a value in a class simply create a method and place the instance
+# value to return it
+class Boogeyman
+  def scare_factor
+    @scare_factor
+  end
+  def hiding_place
+    @hiding_place
+  end
+  def scare_factor=(factor)
+    @scare_factor = factor
+  end
+  def hiding_place=(place)
+    @hiding_place = place
+  end end
+monster1 = Boogeyman.new("Crazy Cal", "Nashville, TN")
+monster1.scare_factor = 6000
+puts monster1.scare_factor
+lp()
+
+# a simpler method
+class Boogeyman
+  attr_writer :scare_factor
+  def scare_factor
+    return (@scare_factor / 1000).to_s + "Fg"
+  end
+end
+  monster1 = Boogeyman.new("Psycho Sally", "Los Angeles, CA")
+  monster1.scare_factor = 6000
+  puts monster1.scare_factor
+
+lp()
